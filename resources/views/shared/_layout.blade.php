@@ -27,7 +27,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="{{action('ContactsController@getAdd')}}">Add Contact</a></li>
       <li><a href="{{action('StaticController@getAbout')}}">About the Project</a></li>
-      <li><a href="{{action('StaticController@getAbout')}}">Fork Me on GitHub</a></li>
+      <li><a href="https://github.com/JorgeMurta/laravel5-sample-project">Fork Me on GitHub</a></li>
     </ul>
   </div>
   </div>
