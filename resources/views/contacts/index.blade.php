@@ -13,11 +13,11 @@
 	</thead>
 	<tbody data-bind="foreach: items">
 		<tr>
-			<td data-bind="text: firstname"></td>
-			<td data-bind="text: lastname"></td>
-			<td data-bind="text: email"></td>
-			<td data-bind="text: phone"></td>
-			<td data-bind="text: website"></td>
+			<td style="vertical-align: middle" data-bind="text: firstname"></td>
+			<td style="vertical-align: middle" data-bind="text: lastname"></td>
+			<td style="vertical-align: middle" data-bind="text: email"></td>
+			<td style="vertical-align: middle" data-bind="text: phone"></td>
+			<td style="vertical-align: middle" data-bind="text: website"></td>
 			<td>
 				<a class="btn btn-primary" data-bind="click: $parent.editContact" href="#">Edit</a>
 				<a class="btn btn-link" data-bind="click: $parent.deleteContact" href="#">Delete</a>
