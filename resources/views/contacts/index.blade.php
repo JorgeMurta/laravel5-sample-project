@@ -8,6 +8,7 @@
 		<td>Last Name</td>
 		<td>Email</td>
 		<td>Phone</td>
+		<td>Website</td>
 		<td></td>
 	</thead>
 	<tbody data-bind="foreach: items">
@@ -16,6 +17,7 @@
 			<td data-bind="text: lastname"></td>
 			<td data-bind="text: email"></td>
 			<td data-bind="text: phone"></td>
+			<td data-bind="text: website"></td>
 			<td>
 				<a class="btn btn-primary" data-bind="click: $parent.editContact" href="#">Edit</a>
 				<a class="btn btn-link" data-bind="click: $parent.deleteContact" href="#">Delete</a>
