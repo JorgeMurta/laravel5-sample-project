@@ -9,7 +9,7 @@
 		<td>Email</td>
 		<td>Phone</td>
 		<td>Website</td>
-		<td></td>
+		<td width="250"></td>
 	</thead>
 	<tbody data-bind="foreach: items">
 		<tr>
