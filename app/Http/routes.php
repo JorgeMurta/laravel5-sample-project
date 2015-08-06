@@ -18,13 +18,13 @@ Route::get('/', 'ContactsController@getIndex');
 Route::get('/add', 'ContactsController@getAdd');
 Route::post('/create','ContactsController@postCreate');
 
-// Routes to Edit the Contact
+// Routes to Edit a Contact
 Route::get('/edit/{id}', 'ContactsController@getEdit')
 ->where(['id' => '[0-9]+']);
 Route::post('/update/{id}', 'ContactsController@postUpdate')
 ->where(['id' => '[0-9]+']);
 
-
+// Route to Delete a Contact
 Route::get('/delete/{id}', 'ContactsController@getDelete')
 ->where(['id' => '[0-9]+']);
 

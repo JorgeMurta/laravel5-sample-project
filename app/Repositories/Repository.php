@@ -15,9 +15,21 @@ class Repository implements RepositoryContract
     	return $this->model->all();
     }
 
-    public function createOrUpdate($entity, $id = null)
+    public function createOrUpdate($modelParams, $id = null)
     {
-    	$entity->save();
+        if(is_null($id))
+        {
+            $entity = $this->model->create($modelParams);
+        }
+        else
+        {
+            $entity = $this->get($id);
+            $entity->fill($modelParams);
+        }
+
+        $entity->save();
+
+        return $entity;
     }
 
     public function get($id)

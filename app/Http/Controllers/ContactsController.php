@@ -51,21 +51,7 @@ class ContactsController extends Controller
      */
     public function postCreate(CreateContactRequest $request)
     {
-    	// No need to validation (CreateContactRequest handles it before action be executed)
-
-    	$contact = new Contact();
-
-    	$contact->firstname = $request->get('firstname');
-    	$contact->lastname = $request->get('lastname');
-    	$contact->email = $request->get('email');
-    	$contact->phone = $request->get('phone');
-    	$contact->website = $request->get('website');
-
-    	$this->repository->createOrUpdate($contact);
-
-    	// Trigger Event to Update All the Clients
-    	pusher()->trigger('contacts', 'create', json_encode($contact));
-
+        $this->dispatchFrom(\App\Commands\CreateContactCommand::class, $request);
     	return redirect()->action('ContactsController@getIndex');
     }
 
@@ -77,27 +63,14 @@ class ContactsController extends Controller
 
     public function postUpdate($id, EditContactRequest $request)
     {
-    	$contact = $this->repository->get($id);
-
-    	$contact->firstname = $request->get('firstname');
-    	$contact->lastname = $request->get('lastname');
-    	$contact->email = $request->get('email');
-    	$contact->phone = $request->get('phone');
-    	$contact->website = $request->get('website');
-
-    	$this->repository->createOrUpdate($contact);
-
+        $request["id"] = $id;
+        $this->dispatchFrom(\App\Commands\UpdateContactCommand::class, $request);
     	return redirect()->action('ContactsController@getIndex');
     }
 
     public function getDelete($id)
     {
-    	$contact = $this->repository->get($id);
-    	$this->repository->remove($contact);
-
-    	// Trigger Event to Update All the Clients
-    	pusher()->trigger('contacts', 'remove', json_encode($contact));
-
+        $this->dispatch(new \App\Commands\DeleteContactCommand($id));
     	return redirect()->action('ContactsController@getIndex');
     }
 }
