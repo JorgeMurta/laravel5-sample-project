@@ -56,12 +56,24 @@ class ContactsController extends Controller
     	return redirect()->action('ContactsController@getIndex');
     }
 
+    /**
+     * Renders the View to Edit a User
+     * @param  int $id User ID
+     * @return View
+     */
     public function getEdit($id)
     {
     	$contact = $this->repository->get($id);
     	return view('contacts.edit', compact('contact'));
     }
 
+    /**
+     * Receives the Updated User, validates it and
+     * Updates it in the Database
+     * @param  int $id UserID
+     * @param  EditContactRequest $request Contact Update Request
+     * @return View
+     */
     public function postUpdate($id, EditContactRequest $request)
     {
         $request["id"] = $id;
