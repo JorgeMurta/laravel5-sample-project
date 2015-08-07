@@ -12,7 +12,7 @@ use App\Http\Requests\EditContactRequest;
 use App\Models\Contact;
 
 /**
- * CONTACTS CONTROLLER
+ * Contacts Controller
  * Controller that is responsible for listing, adding and editing Contacts.
  */
 class ContactsController extends Controller
@@ -81,6 +81,11 @@ class ContactsController extends Controller
     	return redirect()->action('ContactsController@getIndex');
     }
 
+    /**
+     * Deletes a Contact
+     * @param  int $id ContactId
+     * @return View
+     */
     public function getDelete($id)
     {
         $this->dispatch(new \App\Commands\DeleteContactCommand($id));
