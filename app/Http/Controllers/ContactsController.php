@@ -13,7 +13,7 @@ use App\Models\Contact;
 
 /**
  * CONTACTS CONTROLLER
- * Controller that is responsible for listing, adding and editing users.
+ * Controller that is responsible for listing, adding and editing Contacts.
  */
 class ContactsController extends Controller
 {
@@ -46,7 +46,7 @@ class ContactsController extends Controller
     }
 
     /**
-     * Receives a new User, validates it and
+     * Receives a new Contact, validates it and
      * Adds it to the Database
      * @return Redirect
      */
@@ -57,8 +57,8 @@ class ContactsController extends Controller
     }
 
     /**
-     * Renders the View to Edit a User
-     * @param  int $id User ID
+     * Renders the View to Edit a Contact
+     * @param  int $id Contact ID
      * @return View
      */
     public function getEdit($id)
@@ -68,9 +68,9 @@ class ContactsController extends Controller
     }
 
     /**
-     * Receives the Updated User, validates it and
+     * Receives the Updated Contact, validates it and
      * Updates it in the Database
-     * @param  int $id UserID
+     * @param  int $id ContactID
      * @param  EditContactRequest $request Contact Update Request
      * @return View
      */
