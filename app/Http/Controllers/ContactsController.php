@@ -17,16 +17,17 @@ use App\Models\Contact;
  */
 class ContactsController extends Controller
 {
-	protected $repository;
+    protected $repository;
 
-	public function __construct(ContactRepository $repository)
-	{
-		$this->repository = $repository;
-	}
-	/**
-	 * Render the List of Contacts in the Database
-	 * @return View
-	 */
+    public function __construct(ContactRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    /**
+     * Render the List of Contacts in the Database
+     * @return View
+     */
     public function getIndex()
     {
     	$contacts = $this->repository->getAll();
