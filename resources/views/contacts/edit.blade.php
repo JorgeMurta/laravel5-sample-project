@@ -1,6 +1,9 @@
 @extends('shared._layout')
 
 @section('content')
+
+@include('shared._validationerrors')
+
 <div class="well">
 	<div>
 		<form method="POST" action="{{ action('ContactsController@postUpdate', ['id' => $contact->id]) }}" class="form-horizontal">
