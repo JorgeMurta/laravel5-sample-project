@@ -52,7 +52,7 @@ class ContactsController extends Controller
      */
     public function postCreate(CreateContactRequest $request)
     {
-        $this->dispatchFrom(\App\Jobs\CreateContactJob::class, $request);
+        $this->dispatchFrom(\App\Jobs\Contact\CreateContactJob::class, $request);
     	return redirect()->action('ContactsController@getIndex');
     }
 
@@ -77,7 +77,7 @@ class ContactsController extends Controller
     public function postUpdate($id, EditContactRequest $request)
     {
         $request["id"] = $id;
-        $this->dispatchFrom(\App\Jobs\UpdateContactJob::class, $request);
+        $this->dispatchFrom(\App\Jobs\Contact\UpdateContactJob::class, $request);
     	return redirect()->action('ContactsController@getIndex');
     }
 
@@ -88,7 +88,7 @@ class ContactsController extends Controller
      */
     public function getDelete($id)
     {
-        $this->dispatch(new \App\Jobs\DeleteContactJob($id));
+        $this->dispatch(new \App\Jobs\Contact\DeleteContactJob($id));
     	return redirect()->action('ContactsController@getIndex');
     }
 }
