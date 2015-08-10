@@ -13,13 +13,19 @@
 			    </div>
 			</div>
 			<div class="form-group">
-				{!! Form::label('firstname', 'First Name', ['class' => 'col-sm-2 control-label']) !!}
+				<div class="col-sm-2 control-label">
+					{!! Form::label('firstname', 'First Name') !!}
+					<span class="label-required">*</span>
+				</div> 
 			    <div class="col-sm-10">
 			    	{!! Form::text('firstname', null, ['class' => 'form-control']) !!}
 			    </div>
 			</div>
 			<div class="form-group">
-				{!! Form::label('lastname', 'Last Name', ['class' => 'col-sm-2 control-label']) !!}
+				<div class="col-sm-2 control-label">
+					{!! Form::label('lastname', 'Last Name') !!}
+					<span class="label-required">*</span>
+				</div>
 			    <div class="col-sm-10">
 			    	{!! Form::text('lastname', null, ['class' => 'form-control']) !!}
 			    </div>

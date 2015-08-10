@@ -22,3 +22,8 @@
 	font-weight: bold;
 	padding: 4px;
 }
+
+.label-required
+{
+	color:red;
+}
