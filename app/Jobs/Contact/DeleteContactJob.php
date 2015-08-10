@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contact\Jobs;
+namespace App\Jobs\Contact;
 
 use App\Jobs\Job;
 use Illuminate\Contracts\Bus\SelfHandling;
